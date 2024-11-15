@@ -3,6 +3,7 @@ const API_URL = "https://random-word-api.herokuapp.com/word?number=1&length=";
 let targetWord = "";
 let guessCount = 0;
 let wordsFound = 0;
+
 const usedLetters = new Set();
 
 // Fetch random word based on the given length
@@ -167,7 +168,12 @@ function loadGameStats() {
         } else if (name === 'wordsFound') {
             wordsFound = parseInt(value);
             document.getElementById("wordsFound").innerText = wordsFound;
+            let averageGuesses = Math.round(guessCount / wordsFound, 2)
+            document.getElementById("averageGuesses").innerText = guessCount / wordsFound
         }
+
+
+        
     });
 }
 
