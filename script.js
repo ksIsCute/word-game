@@ -31,6 +31,10 @@ async function loadNewWord() {
         document.getElementById("message").style.color = "green";
         document.getElementById("message").innerText = `New word loaded: ${targetWord.length} letters.`;
         usedLetters.clear();  // Reset the used letters set for new game
+        const recentGuessesList = document.getElementById("recentGuessesList")
+        while( recentGuessesList.firstChild ){
+            recentGuessesList.removeChild( recentGuessesList.firstChild );
+        }
         updateKeyboard();
     } else {
         document.getElementById("message").style.color = "red";
@@ -171,9 +175,6 @@ function loadGameStats() {
             let averageGuesses = Math.round(guessCount / wordsFound, 2)
             document.getElementById("averageGuesses").innerText = guessCount / wordsFound
         }
-
-
-        
     });
 }
 
