@@ -4,14 +4,17 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Word Guess Game</title>
-        <link rel="stylesheet" href="style.css">  <!-- Link to external CSS file -->
+        <link rel="stylesheet" href="style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     </head>
     <body>
         <div id="guessStats">
-            <p>All Time Guesses: <span id="guessCount">0</span></p>
-            <p>Words Found: <span id="wordsFound">0</span></p>
-            <p>Average Guesses Per Word: <span id="averageGuesses">0</span> per round</p>
+            <button id="statsButton">Game Stats</button>
+            <div id="statsDropdown" class="dropdown">
+                <p>All Time Guesses: <span id="guessCount">0</span></p>
+                <p>Words Found: <span id="wordsFound">0</span></p>
+                <p>Avg Guesses Per Word: <span id="averageGuesses">0</span> per round</p>
+            </div>
         </div>
 
         <h1>Word Guess Game</h1>
@@ -32,8 +35,8 @@
 
         <div id="message"></div> <!-- Element for displaying messages -->
         
-        <p id=wordLengthMessage></p>
+        <p id="wordLengthMessage"></p>
         
-        <script src="script.js"></script>  <!-- Link to external JavaScript file -->
+        <script src="script.js"></script>
     </body>
 </html>

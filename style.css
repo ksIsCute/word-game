@@ -15,12 +15,41 @@ h1 {
     text-align: center;
 }
 
-/* Guess Stats Display */
+/* Game Stats Section */
 #guessStats {
-    position: absolute;
-    top: 20px;
-    left: 20px;
+    position: relative;
     font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Game Stats Button */
+#statsButton {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Dropdown menu for stats */
+#statsDropdown {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Show the dropdown when active */
+#statsDropdown.active {
+    display: block;
 }
 
 /* Keyboard Styling */
@@ -113,4 +142,22 @@ h1 {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    #keyboard {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    #statsButton {
+        margin-bottom: 15px;
+    }
+
+    #statsDropdown {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+        margin-top: 10px;
+    }
 }

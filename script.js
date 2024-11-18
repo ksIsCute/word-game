@@ -173,7 +173,7 @@ function loadGameStats() {
             wordsFound = parseInt(value);
             document.getElementById("wordsFound").innerText = wordsFound;
             let averageGuesses = Math.round(guessCount / wordsFound, 2)
-            document.getElementById("averageGuesses").innerText = guessCount / wordsFound
+            document.getElementById("averageGuesses").innerText = averageGuesses
         }
     });
 }
@@ -182,7 +182,7 @@ function loadGameStats() {
 document.getElementById("guessForm").addEventListener("submit", function(event) {
     event.preventDefault();
     const input = document.getElementById("wordInput").value.trim();
-    check(targetWord, input);
+    check(targetWord, input);  // Call the check function
     document.getElementById("wordInput").value = ''; // Clear input field
 });
 
@@ -193,3 +193,9 @@ window.onload = function() {
 };
 
 document.getElementById("loadNewWord").addEventListener("click", loadNewWord);
+
+// Toggle dropdown menu for game stats on button click (mobile)
+document.getElementById("statsButton").addEventListener("click", function() {
+    const statsDropdown = document.getElementById("statsDropdown");
+    statsDropdown.classList.toggle("active");  // Toggle the "active" class to show/hide the dropdown
+});
