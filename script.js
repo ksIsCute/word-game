@@ -14,11 +14,11 @@ async function fetchRandomWord(length) {
         if (data && data.length > 0) {
             return data[0].toLowerCase();
         } else {
-            return null;
+            return "words";
         }
     } catch (error) {
         console.error("Error fetching word:", error);
-        return null;
+        return "words";
     }
 }
 
@@ -45,7 +45,7 @@ async function loadNewWord() {
 // Update keyboard with the status of the letters
 function updateKeyboard() {
     const keyboardElement = document.getElementById("keyboard");
-    const alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    const alphabet = 'qwertyuiopasdfghjklzxcvbnm'.split('');
 
     // Clear existing keyboard
     keyboardElement.innerHTML = '';
